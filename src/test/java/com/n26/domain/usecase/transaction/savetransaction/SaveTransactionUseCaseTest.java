@@ -38,7 +38,7 @@ public class SaveTransactionUseCaseTest {
     public void transactionOlderThan60SecondsShouldBeNotSaved()
             throws TransactionAfterOffsetException, TransactionBeforeOnsetException {
         SaveTransactionRequestModel requestModel = new SaveTransactionRequestModel(
-                new BigDecimal(1), OffsetDateTime.now().minusSeconds(60)
+                new BigDecimal(1), OffsetDateTime.now().minusSeconds(61)
         );
 
         saveTransactionService.saveTransaction(requestModel);
